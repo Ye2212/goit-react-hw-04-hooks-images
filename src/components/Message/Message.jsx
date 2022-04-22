@@ -1,11 +1,11 @@
 import propTypes from 'prop-types';
-import { Text } from "./Message.styled";
+import { Text } from './Message.styled';
 
-function HelloText({ text }) {
-  return (<Text>{text}</Text>)
+function Message({ text }) {
+  return <Text>{text}</Text>;
 }
 
-HelloText.propTypes = {
+Message.propTypes = {
   text: propTypes.string.isRequired,
-}
-export default HelloText;
+};
+export default Message;

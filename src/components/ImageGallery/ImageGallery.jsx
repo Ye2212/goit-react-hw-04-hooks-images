@@ -5,8 +5,8 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 function ImageGallery({ images, toggleModal, openModalImg }) {
     return (
         <List>
-            {images.map(({ id, webformatURL, largeImageURL, }) => (
-                < ImageGalleryItem
+            {images.map(({ id, webformatURL, largeImageURL }) => (
+                <ImageGalleryItem
                     key={id}
                     smallImage={webformatURL}
                     largeImage={largeImageURL}
@@ -27,5 +27,5 @@ ImageGallery.propTypes = {
     ).isRequired,
     toggleModal: propTypes.func.isRequired,
     openModalImg: propTypes.func.isRequired,
-}
+};
 export default ImageGallery;
