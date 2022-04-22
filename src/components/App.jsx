@@ -17,7 +17,7 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [openModalImg, setOpenModalImg] = useState(null);
   const [status, setStatus] = useState('idle');
@@ -35,7 +35,8 @@ export default function App() {
           setStatus('resolved');
         })
         .catch(error => {
-          setError(error);
+          // setError(error);
+          console.log(error)
           setStatus('rejected');
         });
     };
