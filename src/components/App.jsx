@@ -17,7 +17,7 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [openModalImg, setOpenModalImg] = useState(null);
   const [status, setStatus] = useState('idle');
@@ -35,8 +35,8 @@ export default function App() {
           setStatus('resolved');
         })
         .catch(error => {
-          // setError(error);
-          console.log(error)
+          setError(error);
+          console.log(error);
           setStatus('rejected');
         });
     };
@@ -78,7 +78,7 @@ export default function App() {
       {images.length > 0 && < ImageGallery images={images} toggleModal={toggleModal} openModalImg={openModal} />}
       {status === 'pending' && < LoaderBallTriangle />}
       {status === 'resolved' && < Button onClick={onNextSearch} />}
-      {status === 'rejected' && <Message text="Something went wrong!" />}
+      {status === 'rejected' && <Message text={error.message} />}
       {showModal && < Modal onClose={toggleModal} largeImage={openModalImg} />}
       <ToastContainer />
     </>
